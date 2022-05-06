@@ -56,7 +56,7 @@ class EvalApplicationTests {
 
 	@Test
 	void appelApiGetListeCommande_retourne1Commande() throws Exception {
-		// Est-ce que ma liste d'utilisateurs contient 4 utilisateurs
+		// Est-ce que ma liste de commandes contient 1 seule commande
 		mvc.perform(MockMvcRequestBuilders.get("/liste-commande").accept(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$", hasSize(1)));
 	}
