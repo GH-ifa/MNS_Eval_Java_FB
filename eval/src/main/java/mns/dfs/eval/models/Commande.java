@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -28,5 +29,5 @@ public class Commande {
 
     @OneToMany(mappedBy = "commande")
     @JsonView(CommandeDisplay.class)
-    private Set<LigneCommande> listeLigneCommande;
+    private Set<LigneCommande> listeLigneCommande = new HashSet<>();
 }

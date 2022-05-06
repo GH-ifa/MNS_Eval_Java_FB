@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.OneToMany;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -21,5 +22,5 @@ public class Employe extends Utilisateur {
 
     @OneToMany(mappedBy = "gestionnaire")
     @JsonView({EmployeDisplay.class})
-    private Set<Article> listeArticleAgerer;
+    private Set<Article> listeArticleAgerer = new HashSet<>();
 }
