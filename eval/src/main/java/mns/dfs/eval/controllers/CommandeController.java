@@ -27,4 +27,14 @@ public class CommandeController {
     public List<Commande> commandes() {
         return commandeDao.findAll();
     }
+
+    // L'interface front-end indique les 10 dernières commandes alors que le sujet dans le PDF demande seulement une liste des commandes sans précision
+    // J'ai donc créé une fonction pour récupérer les 10 dernières commandes, au cas où
+    @GetMapping("/liste-dernieres-commande")
+    @JsonView(CommandeDisplay.class)
+    public List<Commande> dernieresCommandes() {
+        return commandeDao.findFirst10ByOrderByIdDesc();
+    }
+
+
 }

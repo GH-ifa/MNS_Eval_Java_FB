@@ -8,9 +8,7 @@ import mns.dfs.eval.views.EmployeDisplay;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 @Getter
