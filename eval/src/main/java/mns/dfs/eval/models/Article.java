@@ -9,6 +9,8 @@ import mns.dfs.eval.views.EmployeDisplay;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,5 +30,6 @@ public class Article {
     @ManyToOne
     private Employe gestionnaire;
 
-
+    @OneToMany(mappedBy = "article")
+    private Set<Caracteristique> listeCaracteristique = new HashSet<>();
 }
